@@ -1,38 +1,353 @@
-.App {
-  text-align: center;
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue|Tomorrow");
+@import url("https://fonts.googleapis.com/css?family=Anton");
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+} 
+
+html,
+body,
+.app {
+  height: 100vh; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+nav{
+  align-self: center;
+}
+nav a{
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 2em;
+  
+}
+header {
+  display: grid;
+  grid-template-columns: 32% 3% 55% 10%;
+  right:0;
+  left:0;
+  margin-top: 0;
+}
+
+header a{
+  text-decoration: none;
+  font-family: 'Anton', sans-serif;
+  font-weight: bold;
+}
+header a:hover{
+  text-decoration: none;
+}
+#app-title{
+  display:flex;
+  width: 30vw;
+  font-size: 5vw;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.main {
+  flex: 1 1 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+footer {
+  flex: 0 0 auto;
+  padding-top: 20px;
+  background-color: lightgrey;
+  text-align: center;
+}
+#copyright{
+  text-align: center;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.im-linkedin, .im-github{
+  color: white;
+  font-size: 3em;
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Login/register form start */
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin: 60px auto 30px;
+  padding: 15px;
+  position: relative;
+  background: #fffaf6;
+  border-radius: 4px;
+  color: #7e7975;
+  box-shadow:
+      0 2px 2px rgba(0,0,0,0.2),        
+      0 1px 5px rgba(0,0,0,0.2),        
+      0 0 0 12px rgba(255,255,255,0.4); 
+}
+
+.form-login h1 {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  color: #bdb5aa;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #EBE6E2;
+  text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+  margin-bottom: 10px;
+}
+
+.form-login h1 .log-in,
+.form-login h1 .register{
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.form-login h1 .log-in {
+  color: #6c6763;
+  padding-right: 2px;
+}
+
+.form-login h1 .register{
+  color: #ffb347;
+  padding-left: 2px;
+}
+
+.form-login .float {
+  width: 95%;
+  float: left;
+  /* padding-top: 15px; */
+  border-top: 1px solid rgba(255,255,255,1);
+}
+#change-password{
+  width: 30vw;
+}
+.form-login .float:first-of-type {
+  padding-right: 5px;
+}
+
+.form-login .float:last-of-type {
+  padding-left: 5px;
+}
+
+.form-login label {
+  display: block;
+  padding: 0 0 5px 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.form-login label i {
+  margin-right: 5px; /* Gap between icon and text */
+  display: inline-block;
+  width: 10px;
+}
+
+.form-login input[type=text],
+.form-login input[type=password],
+.form-login input[type=email] {
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  border: 3px solid #ebe6e2;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+}
+
+.form-login input[type=text]:hover,
+.form-login input[type=password]:hover,
+.form-login input[type=email]:hover {
+  border-color: #CCC;
+}
+
+.form-login label:hover ~ input {
+  border-color: #CCC;
+}
+
+.form-login input[type=text]:focus,
+.form-login input[type=email]:focus,
+.form-login input[type=password]:focus {
+  border-color: #BBB;
+  outline: none;
+}
+
+.form-login input[type=submit]{
+  width: 50%;
+  height: 38px;
+  float: left;
+  position: relative;
+  box-shadow: inset 0 1px rgba(255,255,255,0.3);
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  font-size: 1.4em;
+  line-height: 38px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 1%;
+  background: #fbd568; 
+  background: linear-gradient(#fbd568, #ffb347);
+  border: 1px solid #f4ab4c;
+  color: #996319;
+  text-shadow: 0 1px rgba(255,255,255,0.3);
+}
+
+.form-login input[type=submit]:hover{
+  box-shadow: 
+      inset 0 1px rgba(255,255,255,0.3), 
+      inset 0 20px 40px rgba(255,255,255,0.15);
+}
+
+.form-login input[type=submit]:active{
+  top: 1px;
+}
+.clearfix{
+  align-self: center;
+  display: flex;
+}
+.clearfix .register{
+  margin-left: 30px;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: bold;
+  color: #bdb5aa;
+  text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+}
+.clearfix a{
+  text-decoration: none;
+}
+/* Login/register form end */
+
+.im-user-circle{
+  font-size: 3.5em;
+  color:black;
+}
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+/* Burger Menu end */
+.burger{
+  display:none;
+}
+.mobile-header{
+  display: none;
+}
+@media only screen 
+  and (max-width: 800px){
+   
+    html {
+      font-size: 75%;
+    }
+    .full{
+      display: none;
+    }
+    .burger{
+      display: flex;
+      text-align: center;
+    }
+    header {
+      grid-template-columns: 55% 2% 30% 3%;
+      margin-top: 3%;
+    }
+    #app-title{
+      margin-left: 40%;
+    }
+    .mobile-header{
+      display: block;
+      text-align: center;
+      font-family: 'Anton', sans-serif;
+      font-size: 1.5em;
+    }
+    header {
+      /* grid-template-columns: 55% 2% 30% 3%;
+      margin-top: 3%; */
+    }
+    #app-title{
+      margin-left: 40%;
+    }
 }
